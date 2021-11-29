@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- includes('head.ejs') %>
+  <head>
+    <%- include('includes/head.ejs') %>
+  </head>
   <body>
+    <%- include('includes/header.ejs') %>
     <h1>Welcome to this demo!</h1>
     <p>
-      In this demo project, you can create accounts & log in with accounts. In
-      addition, on the /admin page, you can perform CRUD operations on blog
-      posts. Please note: There are no "user-facing" views (for non-logged-in
-      users) for those blog posts.
+      In this demo project, you can create accounts & log in with accounts.
+      <br />
+      In addition, on the <a href="/admin">/admin page</a>, you can perform CRUD
+      operations on blog posts. <br />
+      Please note: There are no "user-facing" views (for non-logged-in users)
+      for those blog posts.
     </p>
   </body>
 </html>

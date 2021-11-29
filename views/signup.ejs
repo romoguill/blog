@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('includes/head') %>
+    <link rel="stylesheet" href="styles/form.css" />
+  </head>
+  <body>
+    <%- include('includes/header') %>
+
+    <div class="container">
+      <form action="" autocomplete="off">
+        <h2>Signup</h2>
+        <div class="form-control">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" required />
+        </div>
+        <div class="form-control">
+          <label for="confirmemail">Confirm Email</label>
+          <input
+            type="email"
+            name="confirmemail"
+            id="confirmemail"
+            value=""
+            required
+          />
+        </div>
+        <div class="form-control">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            value=""
+            required
+          />
+        </div>
+        <button>Create user</button>
+        <a href="/login">Login instead</a>
+      </form>
+    </div>
+  </body>
+</html>
