@@ -1,7 +1,9 @@
 <li>
   <h3><%= post.title %></h3>
   <div class="actions">
-    <a class="btn btn-primary">View & Edit</a>
+    <a href="/posts/<%= post._id %>/edit" class="btn btn-primary"
+      >View & Edit</a
+    >
     <form action="/posts/<%= post._id %>/delete" method="POST">
       <button class="btn btn-light">Delete</button>
     </form>

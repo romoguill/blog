@@ -41,4 +41,26 @@ router.post('/posts/:id/delete', async (req, res) => {
   res.redirect('/admin');
 });
 
+router.get('/posts/:id/edit', async (req, res) => {
+  const postId = ObjectId(req.params.id);
+
+  const post = await db.getDb().collection('posts').findOne({ _id: postId });
+
+  res.render('edit-post', { post });
+});
+
+router.post('/posts/:id/edit', async (req, res) => {
+  const postId = ObjectId(req.params.id);
+
+  await db
+    .getDb()
+    .collection('posts')
+    .updateOne(
+      { _id: postId },
+      { $set: { title: req.body.title, content: req.body.content } }
+    );
+
+  res.redirect('/admin');
+});
+
 module.exports = router;
