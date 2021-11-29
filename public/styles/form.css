@@ -28,6 +28,7 @@ form textarea {
 .form-control textarea {
   border: 1px solid #aaa;
   border-radius: 3px;
+  padding: 0.5rem;
 }
 
 .form-control input:focus,
@@ -42,6 +43,7 @@ form textarea {
   border-radius: 5px;
   margin: 0.5rem 1rem;
   font-size: 1rem;
+  cursor: pointer;
 }
 
 .btn-primary {
@@ -64,4 +66,10 @@ section {
   box-shadow: 1px 1px 4px #bbb;
   list-style: none;
   margin: 1rem 0;
+}
+
+.actions {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }

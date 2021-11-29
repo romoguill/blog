@@ -9,7 +9,7 @@
     <div class="container">
       <h1>Administrative Blog Posts</h1>
       <h2>Create a New Post</h2>
-      <form action="">
+      <form action="/posts" method="POST">
         <div class="form-control">
           <label for="title">Title</label>
           <input type="text" id="title" name="title" />
@@ -20,9 +20,15 @@
         </div>
         <button class="btn btn-primary">Save</button>
       </form>
+
       <section class="blog-posts">
         <h2>All Blog Posts</h2>
-        <div class="blog-posts-list"></div>
+        <div class="blog-posts-list">
+          <ul>
+            <% for (const post of posts) { %> <%- include('single-post', {
+            post}) %> <% } %>
+          </ul>
+        </div>
       </section>
     </div>
   </body>

@@ -4,6 +4,7 @@ const express = require('express');
 
 const blogRoute = require('./routes/blog');
 const db = require('./data/database');
+const { urlencoded } = require('express');
 
 const app = express();
 const PORT = 4000;
@@ -12,6 +13,7 @@ const PORT = 4000;
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
 
 app.use(blogRoute);
