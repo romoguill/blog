@@ -3,6 +3,7 @@ const path = require('path');
 const express = require('express');
 
 const blogRoute = require('./routes/blog');
+const db = require('./data/database');
 
 const app = express();
 const PORT = 4000;
@@ -15,6 +16,8 @@ app.use(express.static('public'));
 
 app.use(blogRoute);
 
-app.listen(PORT, () => {
-  `Listening on port ${PORT}`;
-});
+db.connectToDatabase().then(
+  app.listen(PORT, () => {
+    `Listening on port ${PORT}`;
+  })
+);
